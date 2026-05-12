@@ -94,7 +94,6 @@ function setupTarotModal() {
   const result = document.querySelector("[data-tarot-result]");
   const message = document.querySelector("[data-tarot-message]");
   const cards = document.querySelectorAll(".tarot-pick");
-  const copyButton = document.querySelector("[data-copy-message]");
   const closeButtons = document.querySelectorAll("[data-tarot-close]");
 
   if (!modal || !result || !message || !cards.length) return;
@@ -148,21 +147,36 @@ function setupTarotModal() {
       markClosed();
     });
   });
+}
 
-  if (copyButton) {
-    copyButton.addEventListener("click", async () => {
-      const text =
-        "Здравствуйте. Я выбрала карту дня на сайте и хочу понять, что она может значить для моей ситуации.";
-      try {
-        await navigator.clipboard.writeText(text);
-        copyButton.textContent = "Текст скопирован";
-      } catch {
-        copyButton.textContent = "Скопируйте вручную";
-      }
-    });
-  }
+function setupRevealEffects() {
+  if (prefersReducedMotion) return;
+
+  const targets = document.querySelectorAll(
+    ".section-heading, .hero-copy, .hero-frame, .trust-grid article, .service-card, .process-card, .orbit-gallery, .video-card, .about-photo, .about-copy, .certificate-card, .review-card, .faq-item, .final-card"
+  );
+
+  targets.forEach((target) => target.classList.add("reveal-ready"));
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.12,
+      rootMargin: "0px 0px -6% 0px"
+    }
+  );
+
+  targets.forEach((target) => observer.observe(target));
 }
 
 setupOrbitGallery();
 setupLightbox();
 setupTarotModal();
+setupRevealEffects();

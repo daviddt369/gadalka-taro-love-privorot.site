@@ -25,8 +25,13 @@
 
 ## Куда класть сертификаты
 
-- Временные заглушки лежат в [assets/certificates](/mnt/e/codex/www/sofia/assets/certificates)
+- Временные горизонтальные заглушки лежат в [media/certificates](/mnt/e/codex/www/sofia/media/certificates)
 - Для замены положите реальные сертификаты в эту папку и обновите пути в [index.html](/mnt/e/codex/www/sofia/index.html)
+
+## Где менять иконки услуг
+
+- Иконки услуг лежат в [media/icons](/mnt/e/codex/www/sofia/media/icons)
+- Для сайта выбран единый комплект `icon333`; внутри одного сайта не смешивать стили иконок
 
 ## Где вставлять аналитику
 
@@ -51,6 +56,7 @@
 - Разметка модального окна находится в [index.html](/mnt/e/codex/www/sofia/index.html)
 - Логика показа по таймеру или после прокрутки, закрытие и sessionStorage находятся в [script.js](/mnt/e/codex/www/sofia/script.js)
 - Карты лежат в [assets/cards](/mnt/e/codex/www/sofia/assets/cards)
+- В popup оставлена только кнопка WhatsApp: `Разобрать карту в WhatsApp`
 
 ## Как локально открыть сайт
 

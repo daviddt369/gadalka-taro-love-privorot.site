@@ -18,12 +18,17 @@
   <meta name="theme-color" content="#120b0f">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <div class="site-wrap">
+    <div class="ambient-layer" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="На первый экран сайта Софии">
         <span class="brand-flare"></span>
@@ -54,14 +59,15 @@
           </div>
           <div class="hero-copy">
             <p class="eyebrow">Отношения, семья, будущее, онлайн</p>
-            <h1>Когда сердце запуталось, важно услышать ситуацию глубже и мягко вернуть себе ясность.</h1>
+            <h1>София</h1>
+            <p class="hero-titleline">Таро о чувствах, семье и личном будущем</p>
             <p class="hero-text">
-              Я помогаю бережно разобраться в вопросах любви, семьи, чувств, тревожных повторяющихся сценариев и
-              личного будущего. Консультация строится спокойно, конфиденциально и без категоричных обещаний.
+              Бережно помогаю разобраться в отношениях, семейных вопросах и тревожных решениях, когда хочется
+              спокойного ответа без давления и громких обещаний.
             </p>
             <div class="cta-row">
-              <a class="button button-primary" href="https://wa.me/SOFIA_WHATSAPP" aria-label="Связаться с Софией в WhatsApp">WhatsApp</a>
-              <a class="button button-secondary" href="https://t.me/SOFIA_TELEGRAM" aria-label="Открыть Telegram Софии">Telegram</a>
+              <a class="button button-primary" href="https://wa.me/SOFIA_WHATSAPP" aria-label="Связаться с Софией в WhatsApp">Написать в WhatsApp</a>
+              <a class="button button-secondary" href="#services" aria-label="Перейти к услугам Софии">Получить консультацию</a>
               <a class="button button-ghost" href="tel:SOFIA_PHONE" aria-label="Позвонить Софии">Позвонить</a>
             </div>
             <div class="hero-note">
@@ -89,40 +95,46 @@
           </div>
           <div class="service-grid">
             <article class="service-card">
+              <img class="service-icon" src="./media/icons/service-1.png" alt="" loading="lazy" width="86" height="86">
               <span class="service-chip">Таро</span>
               <h3>Расклад на отношения</h3>
               <p>Помогает увидеть чувства, скрытые причины напряжения и возможные направления для разговора.</p>
-              <a href="#contact">Написать Софии</a>
+              <a href="https://wa.me/SOFIA_WHATSAPP">Получить консультацию</a>
             </article>
             <article class="service-card">
+              <img class="service-icon" src="./media/icons/service-2.png" alt="" loading="lazy" width="86" height="86">
               <span class="service-chip">Будущее</span>
               <h3>Просмотр ближайших событий</h3>
               <p>Подходит, если нужно понять, куда движется ситуация и где лучше не торопиться.</p>
-              <a href="#contact">Задать вопрос</a>
+              <a href="https://wa.me/SOFIA_WHATSAPP">Получить консультацию</a>
             </article>
             <article class="service-card">
+              <img class="service-icon" src="./media/icons/service-3.png" alt="" loading="lazy" width="86" height="86">
               <span class="service-chip">Семья</span>
               <h3>Семейные вопросы</h3>
               <p>Конфликты, дистанция, недосказанность, переживания за брак и атмосферу внутри семьи.</p>
-              <a href="#contact">Обсудить запрос</a>
+              <a href="https://wa.me/SOFIA_WHATSAPP">Получить консультацию</a>
             </article>
             <article class="service-card">
+              <img class="service-icon" src="./media/icons/service-4.png" alt="" loading="lazy" width="86" height="86">
               <span class="service-chip">Год</span>
               <h3>Расклад на год</h3>
               <p>Спокойный обзор важных тем, возможных точек роста и периодов, где стоит быть внимательнее.</p>
-              <a href="#contact">Получить консультацию</a>
+              <a href="https://wa.me/SOFIA_WHATSAPP">Получить консультацию</a>
             </article>
             <article class="service-card">
+              <img class="service-icon" src="./media/icons/service-5.png" alt="" loading="lazy" width="86" height="86">
               <span class="service-chip">Фото</span>
               <h3>Работа по фото</h3>
               <p>Если человек далеко, а вопрос связан с отношениями, связью между людьми или тревожной неопределённостью.</p>
-              <a href="#contact">Узнать подробнее</a>
+              <a href="https://wa.me/SOFIA_WHATSAPP">Получить консультацию</a>
             </article>
             <article class="service-card">
+              <img class="service-icon" src="./media/icons/service-6.png" alt="" loading="lazy" width="86" height="86">
               <span class="service-chip">Онлайн</span>
               <h3>Личная онлайн-консультация</h3>
               <p>Для сложных чувств, важных решений и ситуаций, где нужна поддержка, ясность и мягкий разбор.</p>
-              <a href="#contact">Связаться сейчас</a>
+              <a href="https://wa.me/SOFIA_WHATSAPP">Получить консультацию</a>
             </article>
           </div>
           <div class="cta-center">
@@ -242,13 +254,13 @@
             <h2>Два подготовленных места под документы и подтверждения</h2>
           </div>
           <div class="certificate-grid">
-            <button class="certificate-card" type="button" data-lightbox-image="./assets/certificates/certificate-horizontal.jpg" aria-label="Открыть сертификат Софии крупнее">
-              <!-- Временная заглушка. Реальный горизонтальный сертификат можно заменить здесь: ./assets/certificates/certificate-horizontal.jpg -->
-              <img src="./assets/certificates/certificate-horizontal.jpg" alt="Временный горизонтальный сертификат Софии" loading="lazy" width="830" height="586">
+            <button class="certificate-card" type="button" data-lightbox-image="./media/certificates/certificate-1.jpg" aria-label="Открыть сертификат Софии крупнее">
+              <!-- Временная заглушка. Реальный горизонтальный сертификат можно заменить здесь: ./media/certificates/certificate-1.jpg -->
+              <img src="./media/certificates/certificate-1.jpg" alt="Временный горизонтальный сертификат Софии" loading="lazy" width="830" height="586">
             </button>
-            <button class="certificate-card certificate-card-vertical" type="button" data-lightbox-image="./assets/certificates/certificate-vertical.jpg" aria-label="Открыть второй сертификат Софии крупнее">
-              <!-- Временная заглушка. Реальный вертикальный сертификат можно заменить здесь: ./assets/certificates/certificate-vertical.jpg -->
-              <img src="./assets/certificates/certificate-vertical.jpg" alt="Временный вертикальный сертификат Софии" loading="lazy" width="900" height="1200">
+            <button class="certificate-card" type="button" data-lightbox-image="./media/certificates/certificate-2.jpg" aria-label="Открыть второй сертификат Софии крупнее">
+              <!-- Временная заглушка. Реальный горизонтальный сертификат можно заменить здесь: ./media/certificates/certificate-2.jpg -->
+              <img src="./media/certificates/certificate-2.jpg" alt="Временный горизонтальный сертификат Софии" loading="lazy" width="1200" height="900">
             </button>
           </div>
         </div>
@@ -270,7 +282,7 @@
             <article class="review-card"><p>София помогла увидеть не только чувства, но и причины конфликта. Это дало ощущение ясности и опоры.</p><span>Разбор отношений</span></article>
           </div>
           <div class="cta-center">
-            <a class="button button-primary" href="https://wa.me/SOFIA_WHATSAPP">Задать свой вопрос</a>
+            <a class="button button-primary" href="https://wa.me/SOFIA_WHATSAPP">Написать в WhatsApp</a>
             <a class="button button-secondary" href="tel:SOFIA_PHONE">Позвонить Софии</a>
           </div>
         </div>
@@ -301,7 +313,7 @@
             <p>Расскажите коротко, что сейчас беспокоит, и я подскажу, какой формат консультации подойдёт лучше.</p>
           </div>
           <div class="contact-actions">
-            <a class="button button-primary" href="https://wa.me/SOFIA_WHATSAPP">WhatsApp</a>
+            <a class="button button-primary" href="https://wa.me/SOFIA_WHATSAPP">Обсудить ситуацию</a>
             <a class="button button-secondary" href="https://t.me/SOFIA_TELEGRAM">Telegram</a>
             <a class="button button-ghost" href="tel:SOFIA_PHONE">Позвонить</a>
           </div>
@@ -360,13 +372,7 @@
         <p class="tarot-message" data-tarot-message></p>
         <p class="tarot-cta">Хотите разобрать значение именно для вашей ситуации? Напишите мне, и я посмотрю, что эта карта может означать для вас.</p>
         <div class="cta-row cta-row-popup">
-          <a class="button button-primary" href="https://wa.me/SOFIA_WHATSAPP?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%A1%D0%BE%D1%84%D0%B8%D1%8F.%20%D0%AF%20%D0%B2%D1%8B%D0%B1%D1%80%D0%B0%D0%BB%D0%B0%20%D0%BA%D0%B0%D1%80%D1%82%D1%83%20%D0%B4%D0%BD%D1%8F%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20%D0%B8%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%BD%D1%8F%D1%82%D1%8C%2C%20%D1%87%D1%82%D0%BE%20%D0%BE%D0%BD%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%B5%D1%82%20%D0%B7%D0%BD%D0%B0%D1%87%D0%B8%D1%82%D1%8C%20%D0%B4%D0%BB%D1%8F%20%D0%BC%D0%BE%D0%B5%D0%B9%20%D1%81%D0%B8%D1%82%D1%83%D0%B0%D1%86%D0%B8%D0%B8.">WhatsApp</a>
-          <a class="button button-secondary" href="https://t.me/SOFIA_TELEGRAM">Telegram</a>
-        </div>
-        <div class="copy-helper">
-          <p>Текст для Telegram, если удобнее вставить его вручную:</p>
-          <textarea readonly>Здравствуйте. Я выбрала карту дня на сайте и хочу понять, что она может значить для моей ситуации.</textarea>
-          <button class="copy-button" type="button" data-copy-message>Скопировать текст</button>
+          <a class="button button-primary" href="https://wa.me/SOFIA_WHATSAPP?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%A1%D0%BE%D1%84%D0%B8%D1%8F.%20%D0%AF%20%D0%B2%D1%8B%D0%B1%D1%80%D0%B0%D0%BB%D0%B0%20%D0%BA%D0%B0%D1%80%D1%82%D1%83%20%D0%B4%D0%BD%D1%8F%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20%D0%B8%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%BD%D1%8F%D1%82%D1%8C%2C%20%D1%87%D1%82%D0%BE%20%D0%BE%D0%BD%D0%B0%20%D0%BC%D0%BE%D0%B6%D0%B5%D1%82%20%D0%B7%D0%BD%D0%B0%D1%87%D0%B8%D1%82%D1%8C%20%D0%B4%D0%BB%D1%8F%20%D0%BC%D0%BE%D0%B5%D0%B9%20%D1%81%D0%B8%D1%82%D1%83%D0%B0%D1%86%D0%B8%D0%B8.">Разобрать карту в WhatsApp</a>
         </div>
       </div>
     </section>
