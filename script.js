@@ -1,5 +1,4 @@
 const siteConfig = {
-  storageKey: "sofia-tarot-modal-state",
   gallerySelector: "[data-gallery]",
   ringSelector: "[data-gallery-ring]",
   tarotMessages: [
@@ -101,16 +100,13 @@ function setupTarotModal() {
   let timerId = null;
   let shown = false;
 
-  const shouldSkip = () => sessionStorage.getItem(siteConfig.storageKey) === "closed";
-  const markClosed = () => sessionStorage.setItem(siteConfig.storageKey, "closed");
-
   const close = () => {
     modal.hidden = true;
-    markClosed();
+    window.clearTimeout(timerId);
   };
 
   const open = () => {
-    if (shouldSkip() || shown) return;
+    if (shown) return;
     shown = true;
     modal.hidden = false;
   };
@@ -118,7 +114,7 @@ function setupTarotModal() {
   timerId = window.setTimeout(open, siteConfig.revealDelayMs);
 
   const onScroll = () => {
-    if (shouldSkip() || shown) return;
+    if (shown) return;
     const scrollable = document.documentElement.scrollHeight - window.innerHeight;
     if (scrollable <= 0) return;
     if (window.scrollY / scrollable >= siteConfig.revealScrollRatio) {
@@ -144,7 +140,6 @@ function setupTarotModal() {
       result.hidden = false;
       const index = Number(card.getAttribute("data-card-index") || 0);
       message.textContent = siteConfig.tarotMessages[index] || siteConfig.tarotMessages[0];
-      markClosed();
     });
   });
 }
@@ -153,7 +148,7 @@ function setupRevealEffects() {
   if (prefersReducedMotion) return;
 
   const targets = document.querySelectorAll(
-    ".section-heading, .hero-copy, .hero-frame, .trust-grid article, .service-card, .process-card, .orbit-gallery, .video-card, .about-photo, .about-copy, .certificate-card, .review-card, .faq-item, .final-card"
+    ".section-heading, .hero-copy, .hero-photo-wrap, .situations-grid article, .trust-panel, .trust-grid article, .service-card, .process-grid article, .orbit-gallery, .video-card, .about-photo, .about-copy, .certificate-card, .review-grid article, .faq-item, .final-card"
   );
 
   targets.forEach((target) => target.classList.add("reveal-ready"));
