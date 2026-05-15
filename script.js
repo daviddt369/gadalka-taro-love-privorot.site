@@ -149,24 +149,53 @@ function setupTvSlider() {
     const track = slider.querySelector("[data-tv-track]");
     const prevButton = slider.querySelector("[data-tv-prev]");
     const nextButton = slider.querySelector("[data-tv-next]");
+    const slides = [...slider.querySelectorAll(".tv-slide")];
 
-    if (!track || !prevButton || !nextButton) return;
+    if (!track || !prevButton || !nextButton || !slides.length) return;
 
-    const getStep = () => Math.max(track.clientWidth * 0.82, 260);
+    let activeIndex = 0;
+    let autoplayId = null;
+
+    const render = () => {
+      track.style.transform = `translate3d(-${activeIndex * 100}%, 0, 0)`;
+    };
+
+    const goTo = (index) => {
+      activeIndex = (index + slides.length) % slides.length;
+      render();
+    };
+
+    const stopAutoplay = () => {
+      window.clearInterval(autoplayId);
+      autoplayId = null;
+    };
+
+    const startAutoplay = () => {
+      if (prefersReducedMotion || autoplayId) return;
+      autoplayId = window.setInterval(() => {
+        goTo(activeIndex + 1);
+      }, 2000);
+    };
 
     prevButton.addEventListener("click", () => {
-      track.scrollBy({
-        left: -getStep(),
-        behavior: prefersReducedMotion ? "auto" : "smooth"
-      });
+      goTo(activeIndex - 1);
+      stopAutoplay();
+      startAutoplay();
     });
 
     nextButton.addEventListener("click", () => {
-      track.scrollBy({
-        left: getStep(),
-        behavior: prefersReducedMotion ? "auto" : "smooth"
-      });
+      goTo(activeIndex + 1);
+      stopAutoplay();
+      startAutoplay();
     });
+
+    slider.addEventListener("mouseenter", stopAutoplay);
+    slider.addEventListener("mouseleave", startAutoplay);
+    slider.addEventListener("focusin", stopAutoplay);
+    slider.addEventListener("focusout", startAutoplay);
+
+    render();
+    startAutoplay();
   });
 }
 
