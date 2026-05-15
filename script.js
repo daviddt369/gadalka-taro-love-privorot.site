@@ -144,11 +144,37 @@ function setupTarotModal() {
   });
 }
 
+function setupTvSlider() {
+  document.querySelectorAll("[data-tv-slider]").forEach((slider) => {
+    const track = slider.querySelector("[data-tv-track]");
+    const prevButton = slider.querySelector("[data-tv-prev]");
+    const nextButton = slider.querySelector("[data-tv-next]");
+
+    if (!track || !prevButton || !nextButton) return;
+
+    const getStep = () => Math.max(track.clientWidth * 0.82, 260);
+
+    prevButton.addEventListener("click", () => {
+      track.scrollBy({
+        left: -getStep(),
+        behavior: prefersReducedMotion ? "auto" : "smooth"
+      });
+    });
+
+    nextButton.addEventListener("click", () => {
+      track.scrollBy({
+        left: getStep(),
+        behavior: prefersReducedMotion ? "auto" : "smooth"
+      });
+    });
+  });
+}
+
 function setupRevealEffects() {
   if (prefersReducedMotion) return;
 
   const targets = document.querySelectorAll(
-    ".section-heading, .hero-copy, .hero-photo-wrap, .situations-grid article, .trust-panel, .trust-grid article, .service-card, .process-grid article, .orbit-gallery, .video-card, .about-photo, .about-copy, .certificate-card, .review-grid article, .faq-item, .final-card"
+    ".section-heading, .hero-copy, .hero-photo-wrap, .situations-grid article, .trust-panel, .trust-grid article, .service-card, .process-grid article, .orbit-gallery, .video-card, .tv-slider, .about-photo, .about-copy, .certificate-card, .review-grid article, .faq-item, .final-card"
   );
 
   targets.forEach((target) => target.classList.add("reveal-ready"));
@@ -174,4 +200,5 @@ function setupRevealEffects() {
 setupOrbitGallery();
 setupLightbox();
 setupTarotModal();
+setupTvSlider();
 setupRevealEffects();
